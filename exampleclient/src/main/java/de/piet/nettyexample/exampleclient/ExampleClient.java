@@ -12,7 +12,6 @@ import java.io.InputStreamReader;
 public class ExampleClient {
     private static NettyClient nettyClient;
     public static void main( String[] args ) {
-        System.out.println( ExampleClient.class.getPackage().getImplementationVersion() );
         new Thread( ( ) -> {
             nettyClient = new NettyClient( "127.0.0.1", 1234 );
             nettyClient.addPacketReceiver( new PacketListener() );
