@@ -7,18 +7,15 @@ import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.util.concurrent.Future;
-import io.netty.util.concurrent.GenericFutureListener;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
  * Created by Peter on 07.04.2016.
  */
 public class NettyClient implements Runnable, NettyBootstrap {
-    private static List<PacketReceiver> packetReceivers = Collections.synchronizedList( new ArrayList<>(  ) );
+    private static List<PacketReceiver> packetReceivers = new ArrayList<>(  );
     private NettyBootstrap instance;
     private String host;
     private int port;
